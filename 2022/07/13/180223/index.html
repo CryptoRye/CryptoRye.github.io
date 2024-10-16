@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cryptorye.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="这个思考是从一篇河南村镇银行的分析衍生出来的，那篇文章叫&lt;储户存款去哪了?——基于T表和我国支付结算框架的一个猜测&gt;。文章大意是说现行的银行支付结算框架下，用户在各银行之间的存款流动都会反映在央行的T表上（无论是专有的一张表还是挂靠的一张表）。所以在受害者看来，他们的钱是从工行或者农行转储到村镇商业银行，但实际上由于村镇银行在央行没有专表而是挂靠在许昌农商银行的，所以过程是工行发出转移">
+<meta property="og:type" content="article">
+<meta property="og:title" content="货币、铸币税与资产保值">
+<meta property="og:url" content="https://cryptorye.github.io/2022/07/13/180223/index.html">
+<meta property="og:site_name" content="FF Blog">
+<meta property="og:description" content="这个思考是从一篇河南村镇银行的分析衍生出来的，那篇文章叫&lt;储户存款去哪了?——基于T表和我国支付结算框架的一个猜测&gt;。文章大意是说现行的银行支付结算框架下，用户在各银行之间的存款流动都会反映在央行的T表上（无论是专有的一张表还是挂靠的一张表）。所以在受害者看来，他们的钱是从工行或者农行转储到村镇商业银行，但实际上由于村镇银行在央行没有专表而是挂靠在许昌农商银行的，所以过程是工行发出转移">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cryptorye.github.io/2022/07/13/180223/bear.jpg">
+<meta property="article:published_time" content="2022-07-13T10:02:23.000Z">
+<meta property="article:modified_time" content="2024-10-16T11:01:19.773Z">
+<meta property="article:author" content="0xFF">
+<meta property="article:tag" content="投资">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cryptorye.github.io/2022/07/13/180223/bear.jpg">
+
+<link rel="canonical" href="https://cryptorye.github.io/2022/07/13/180223/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>货币、铸币税与资产保值 | FF Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">FF Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://cryptorye.github.io/2022/07/13/180223/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="0xFF">
+      <meta itemprop="description" content="投资/技术/杂念">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FF Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          货币、铸币税与资产保值
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-07-13 18:02:23" itemprop="dateCreated datePublished" datetime="2022-07-13T18:02:23+08:00">2022-07-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-10-16 19:01:19" itemprop="dateModified" datetime="2024-10-16T19:01:19+08:00">2024-10-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%95%E8%B5%84/" itemprop="url" rel="index"><span itemprop="name">投资</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这个思考是从一篇河南村镇银行的分析衍生出来的，那篇文章叫&lt;储户存款去哪了?——基于T表和我国支付结算框架的一个猜测&gt;。文章大意是说现行的银行支付结算框架下，用户在各银行之间的存款流动都会反映在央行的T表上（无论是专有的一张表还是挂靠的一张表）。所以在受害者看来，他们的钱是从工行或者农行转储到村镇商业银行，但实际上由于村镇银行在央行没有专表而是挂靠在许昌农商银行的，所以过程是工行发出转移请求，许昌农商银行响应请求，工行在负债端减去转储值，许昌农商银行加上转储值，之后按理应该进一步和村镇银行之间再进行转移。但是村镇商业银行说他们没有收到存款，所以唯一可能就是农商银行账上的钱或者是负债直接传给所谓的新财富集团进行投资之类的，而由于经济下行投资爆雷，这笔钱就此收不回来窟窿填不上了。</p>
+<p>看完那篇文章突然有种豁然开朗的感觉，因为不光银行支付结算框架是这样的，这篇文章揭示了一个事实——货币的本质。</p>
+<p>实际上，在以物易物阶段是不需要货币。一只羊等于两匹布，直接换就是了，也就是整个市场只有资产，没有货币。然后为了便于交换和保存，人们引入了黄金，黄金作为一种资产充当以物易物的中间等价物。Wait！ 如果把黄金看作货币，此时的货币其实还是一种资产，它也是矿工生产的，相比羊和布更方便保存和分割而已。整个市场还没有引入信用或者说真正意义的货币，因为大家都认可黄金作为一种中间等价物。严格意义上此时并不会有铸币税，一坨黄金就是值一只羊或者两匹布。那么整个市场需要多少货币或者黄金呢，假设最小单位是一两，那么整个市场有多少交换需求是决定需求的根本因素。简化为市场上除了牧民和织户外还有善意的矿工，假如第一天矿工生产了100两市场每天有100只羊和两百匹布需要交换，牧民拿着100只羊卖了100两黄金，然后用100两黄金买了200匹布，而织户用赚到的100两黄金再买到100只羊。那么100两黄金就是市场需要的货币，少于100两就是通缩，多于100两就是通胀。这种以物易物阶段的货币通缩通胀并不会影响市场，因为通缩下黄金更值钱，通胀下黄金更便宜，黄金只是市场上一种等价物而已。</p>
+<p>真正发生改变的是信用体系的建立，国家发行了货币。比如铜币，一两铜作为资产和一颗鸡蛋等价，但是一枚五铢钱可以买一颗鸡蛋，而一枚五铢钱远远用不了一两铜（24铢为1两），那此时的铸币税就是19铢的铜。老百姓不是傻子，这么高的铸币税下，而私铸的成本并不高，所以发行五铢钱后，私铸铜钱伏诛多达几十万人。再说下一些特殊情况，比如有的朝代统治面积太小，铜矿不足或者单纯黑心更是发行了大泉当千，直百五铢这样的超高虚值货币，为什么说虚值，因为汉五铢下已经那么多私铸的了，说明政府信用（刑法加管理）不值19铢，那动不动百倍千倍的虚值肯定是大大高估了。总的来说，这一时期政府是赚了很高的铸币税，并不同于以物易物阶段的第三方善意矿工，因为它成本是一颗鸡蛋等值的铜，外加基本忽略的铸币成本，生成24&#x2F;5颗鸡蛋的铜钱，铸币税就是3.8颗鸡蛋。</p>
+<p>纸币的产生带来将铸币税摆在明面上。如果说金属货币时期货币还存在一定程度上和资产的绑定关系——毕竟统治阶级会控制铜矿，而且翻砂法使铸造成本和防伪性都变得很低，铜在某种程度就是钱——那么纸币就是赤裸裸告诉百姓，所谓的货币就是纸，生活中一文不值的纸。除去基本忽略的制造成本，一张百元大钞铸币税高达九十以上——当然实际上还要扣除另外一项价值不菲的投入：警察和法律。从经济运行的角度来说，当然纸币的发行，或者严格来说信用货币的建立并不是以掠夺铸币税作为第一目标，从货币的需求来说，商品经济的发展需要足够的一般等价物和流通商品对应，这个量很难找到对应的实物。根据美国地质调查局的资料，直到2011年，人类共开采了17万1300吨黄金。所以不严谨的按$50&#x2F;g算，大概$8.5万亿，不到世界GDP的零头，更何况黄金也是资产，大部分派作他用。所以布雷顿森林体系注定会崩毁，早晚的区别而已。</p>
+<p>关于信用货币还有几点值得一提：</p>
+<ul>
+<li>央行T表结构。<br>资产端最大头的部分是美元、借给银行的钱、买的国债等。 负债端最大头是商业银行存款准备金、现金、国库存款、发行债券等。</li>
+<li>信贷的货币扩张。<br>比如A有一头牛，市值1万块，B向银行借了1万块买了牛，A拿到钱又存了银行，所以银行的资产没有变，但是资产端多了B的1万，负债端多了A的1万。由于活期存款增加，也就是等价于市场多了1万的货币（M2）。如果考虑20%的存款准备金率，那这1万还可以继续扩大，增加的货币供应实际是人们未来的钱。</li>
+<li>中国通胀蓄水池。<br>改革开放以来中国作为国际工厂经济迅猛增长，大量美元流入，为了保持国内汇率稳定，政府大量发行货币，但是国内的市场规模并没有那么大的增长，所以必然对应货币通胀，物价上涨，所以大宗必然要作为通胀蓄水池来避免CPI大幅增长，这个蓄水池就是——房地产。所以赌房价上涨堵的就是中国经济增长。由于有信贷的乘数效应，国内增加的货币储量实际在GDP增长基础上进一步又借了未来30年的钱。</li>
+</ul>
+<p>终于说到正题，由此可见所谓的钱所谓的资产只是一个货币幻想，是一串数字而已。这串数字，比如1万块，今天值一头牛，是因为市场有1百头牛，而货币总量是100万元。明天通过信贷的乘数效应，货币总量变为1000万元，那这1万块只值一条牛腿了。问题关键在于大放水之下，如何保持资产不缩水？答案就是观察水的流向。1978年全国居民总存款220亿，2015年增加到60万亿，37年翻了3000倍。而同时，实际财富，按照GDP平均9%的增速算增加了125倍。平均下来每一年，实际财富增加9%，货币增加24%，通胀14%。所以如果这37年间作为农民种地，考虑到化肥种子等等大幅增长而农产品价格只翻了两三倍，简直是远远跑不过通胀。而跑得最慢的当然是拿着现金的人，按2%的复利，37年间竟然只翻了1倍。打工仔算是还好，年轻时候可以跑过货币速度，平均应该可以跑过GDP，跑赢通胀肯定没戏——货币速度肯定是各行业放水平均速度，打工仔绝对不会是领先的那一波。互联网早期从业者应该可以跑赢。房地产呢不好说，虽然平均不一定，但绝对是比较靠前的。考虑到农民工人的庞大基数，他们跑的慢的多，那应该有不少可以跑赢均值。</p>
+<p>结论：不被通胀之熊追上的根本要义是跑得比足够多人快。</p>
+<p><img src="/2022/07/13/180223/bear.jpg" alt="通胀之熊"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%95%E8%B5%84/" rel="tag"><i class="fa fa-tag"></i> 投资</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/19/133050/" rel="prev" title="向传统投降——《喜宴》">
+      <i class="fa fa-chevron-left"></i> 向传统投降——《喜宴》
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/31/213933/" rel="next" title="交易总结">
+      交易总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">0xFF</p>
+  <div class="site-description" itemprop="description">投资/技术/杂念</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:ryekeey@gmail.com" title="E-Mail → mailto:ryekeey@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/ryekeey" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;ryekeey" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">0xFF</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
