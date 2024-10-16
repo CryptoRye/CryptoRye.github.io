@@ -97,8 +97,8 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
 
@@ -117,8 +117,8 @@ darkmode: false
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  tags: /tags/ || fa fa-tags
   archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   about: /about/ || fa fa-user
   #schedule: /schedule/ || fa fa-calendar
@@ -178,20 +178,20 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   #GitHub: https://github.com/yourname || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
+  E-Mail: mailto:ryekeey@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
   #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
   #YouTube: https://youtube.com/yourname || fab fa-youtube
-  #Instagram: https://instagram.com/yourname || fab fa-instagram
+  Instagram: https://instagram.com/ryekeey || fab fa-instagram
   #Skype: skype:yourname?call|chat || fab fa-skype
 
 social_icons:
   enable: true
-  icons_only: false
-  transition: false
+  icons_only: true
+  transition: true
 
 # Blog rolls
 links_settings:
@@ -206,7 +206,7 @@ links:
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
 toc:
-  enable: true
+  enable: false
   # Automatically add list number to toc.
   number: true
   # If true, all words will placed on next lines if header width longer then sidebar width.
@@ -255,7 +255,7 @@ symbols_count_time:
   item_text_total: false
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: false
+tag_icon: true
 
 # Reward (Donate)
 # Front-matter variable (unsupport animation).
