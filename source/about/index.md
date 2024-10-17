@@ -5,7 +5,7 @@ type: "about"
 layout: "about"
 ---
 
-<p style="text-align:center;font-size:2.0em;font-weight: bold;">
-一个勺子
+<p style="font-weight: bold;">
+一个勺子。
 </p>
 
