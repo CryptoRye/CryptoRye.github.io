@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="这个思考是从一篇河南村镇银行的分析衍生出来的，那篇文章叫&lt;储户存款去哪了?——基于T表和我国支付结算框架的一个猜测&gt;。文章大意是说现行的银行支付结算框架下，用户在各银行之间的存款流动都会反映在央行的T表上（无论是专有的一张表还是挂靠的一张表）。所以在受害者看来，他们的钱是从工行或者农行转储到村镇商业银行，但实际上由于村镇银行在央行没有专表而是挂靠在许昌农商银行的，所以过程是工行发出转移">
+<meta property="og:type" content="article">
+<meta property="og:title" content="货币、铸币税与资产保值">
+<meta property="og:url" content="https://www.ffblog.space/2022/07/13/180223/index.html">
+<meta property="og:site_name" content="FF Blog">
+<meta property="og:description" content="这个思考是从一篇河南村镇银行的分析衍生出来的，那篇文章叫&lt;储户存款去哪了?——基于T表和我国支付结算框架的一个猜测&gt;。文章大意是说现行的银行支付结算框架下，用户在各银行之间的存款流动都会反映在央行的T表上（无论是专有的一张表还是挂靠的一张表）。所以在受害者看来，他们的钱是从工行或者农行转储到村镇商业银行，但实际上由于村镇银行在央行没有专表而是挂靠在许昌农商银行的，所以过程是工行发出转移">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.ffblog.space/2022/07/13/180223/bear.jpg">
+<meta property="article:published_time" content="2022-07-13T10:02:23.000Z">
+<meta property="article:modified_time" content="2024-10-19T02:47:01.544Z">
+<meta property="article:author" content="0xFF">
+<meta property="article:tag" content="投资">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ffblog.space/2022/07/13/180223/bear.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>货币、铸币税与资产保值</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="FF Blog" type="application/atom+xml" />
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2022/07/31/213933/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2022/04/19/133050/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www.ffblog.space/2022/07/13/180223/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www.ffblog.space/2022/07/13/180223/&text=货币、铸币税与资产保值"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.ffblog.space/2022/07/13/180223/&is_video=false&description=货币、铸币税与资产保值"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=货币、铸币税与资产保值&body=Check out this article: https://www.ffblog.space/2022/07/13/180223/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www.ffblog.space/2022/07/13/180223/&name=货币、铸币税与资产保值&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www.ffblog.space/2022/07/13/180223/&t=货币、铸币税与资产保值"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        货币、铸币税与资产保值
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">0xFF</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-07-13T10:02:23.000Z" class="dt-published" itemprop="datePublished">2022-07-13</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E6%8A%95%E8%B5%84/">投资</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E6%8A%95%E8%B5%84/" rel="tag">投资</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>这个思考是从一篇河南村镇银行的分析衍生出来的，那篇文章叫&lt;储户存款去哪了?——基于T表和我国支付结算框架的一个猜测&gt;。文章大意是说现行的银行支付结算框架下，用户在各银行之间的存款流动都会反映在央行的T表上（无论是专有的一张表还是挂靠的一张表）。所以在受害者看来，他们的钱是从工行或者农行转储到村镇商业银行，但实际上由于村镇银行在央行没有专表而是挂靠在许昌农商银行的，所以过程是工行发出转移请求，许昌农商银行响应请求，工行在负债端减去转储值，许昌农商银行加上转储值，之后按理应该进一步和村镇银行之间再进行转移。但是村镇商业银行说他们没有收到存款，所以唯一可能就是农商银行账上的钱或者是负债直接传给所谓的新财富集团进行投资之类的，而由于经济下行投资爆雷，这笔钱就此收不回来窟窿填不上了。</p>
+<p>看完那篇文章突然有种豁然开朗的感觉，因为不光银行支付结算框架是这样的，这篇文章揭示了一个事实——货币的本质。</p>
+<p>实际上，在以物易物阶段是不需要货币。一只羊等于两匹布，直接换就是了，也就是整个市场只有资产，没有货币。然后为了便于交换和保存，人们引入了黄金，黄金作为一种资产充当以物易物的中间等价物。Wait！ 如果把黄金看作货币，此时的货币其实还是一种资产，它也是矿工生产的，相比羊和布更方便保存和分割而已。整个市场还没有引入信用或者说真正意义的货币，因为大家都认可黄金作为一种中间等价物。严格意义上此时并不会有铸币税，一坨黄金就是值一只羊或者两匹布。那么整个市场需要多少货币或者黄金呢，假设最小单位是一两，那么整个市场有多少交换需求是决定需求的根本因素。简化为市场上除了牧民和织户外还有善意的矿工，假如第一天矿工生产了100两市场每天有100只羊和两百匹布需要交换，牧民拿着100只羊卖了100两黄金，然后用100两黄金买了200匹布，而织户用赚到的100两黄金再买到100只羊。那么100两黄金就是市场需要的货币，少于100两就是通缩，多于100两就是通胀。这种以物易物阶段的货币通缩通胀并不会影响市场，因为通缩下黄金更值钱，通胀下黄金更便宜，黄金只是市场上一种等价物而已。</p>
+<p>真正发生改变的是信用体系的建立，国家发行了货币。比如铜币，一两铜作为资产和一颗鸡蛋等价，但是一枚五铢钱可以买一颗鸡蛋，而一枚五铢钱远远用不了一两铜（24铢为1两），那此时的铸币税就是19铢的铜。老百姓不是傻子，这么高的铸币税下，而私铸的成本并不高，所以发行五铢钱后，私铸铜钱伏诛多达几十万人。再说下一些特殊情况，比如有的朝代统治面积太小，铜矿不足或者单纯黑心更是发行了大泉当千，直百五铢这样的超高虚值货币，为什么说虚值，因为汉五铢下已经那么多私铸的了，说明政府信用（刑法加管理）不值19铢，那动不动百倍千倍的虚值肯定是大大高估了。总的来说，这一时期政府是赚了很高的铸币税，并不同于以物易物阶段的第三方善意矿工，因为它成本是一颗鸡蛋等值的铜，外加基本忽略的铸币成本，生成24&#x2F;5颗鸡蛋的铜钱，铸币税就是3.8颗鸡蛋。</p>
+<p>纸币的产生带来将铸币税摆在明面上。如果说金属货币时期货币还存在一定程度上和资产的绑定关系——毕竟统治阶级会控制铜矿，而且翻砂法使铸造成本和防伪性都变得很低，铜在某种程度就是钱——那么纸币就是赤裸裸告诉百姓，所谓的货币就是纸，生活中一文不值的纸。除去基本忽略的制造成本，一张百元大钞铸币税高达九十以上——当然实际上还要扣除另外一项价值不菲的投入：警察和法律。从经济运行的角度来说，当然纸币的发行，或者严格来说信用货币的建立并不是以掠夺铸币税作为第一目标，从货币的需求来说，商品经济的发展需要足够的一般等价物和流通商品对应，这个量很难找到对应的实物。根据美国地质调查局的资料，直到2011年，人类共开采了17万1300吨黄金。所以不严谨的按$50&#x2F;g算，大概$8.5万亿，不到世界GDP的零头，更何况黄金也是资产，大部分派作他用。所以布雷顿森林体系注定会崩毁，早晚的区别而已。</p>
+<p>关于信用货币还有几点值得一提：</p>
+<ul>
+<li>央行T表结构。<br>资产端最大头的部分是美元、借给银行的钱、买的国债等。 负债端最大头是商业银行存款准备金、现金、国库存款、发行债券等。</li>
+<li>信贷的货币扩张。<br>比如A有一头牛，市值1万块，B向银行借了1万块买了牛，A拿到钱又存了银行，所以银行的资产没有变，但是资产端多了B的1万，负债端多了A的1万。由于活期存款增加，也就是等价于市场多了1万的货币（M2）。如果考虑20%的存款准备金率，那这1万还可以继续扩大，增加的货币供应实际是人们未来的钱。</li>
+<li>中国通胀蓄水池。<br>改革开放以来中国作为国际工厂经济迅猛增长，大量美元流入，为了保持国内汇率稳定，政府大量发行货币，但是国内的市场规模并没有那么大的增长，所以必然对应货币通胀，物价上涨，所以大宗必然要作为通胀蓄水池来避免CPI大幅增长，这个蓄水池就是——房地产。所以赌房价上涨堵的就是中国经济增长。由于有信贷的乘数效应，国内增加的货币储量实际在GDP增长基础上进一步又借了未来30年的钱。</li>
+</ul>
+<p>终于说到正题，由此可见所谓的钱所谓的资产只是一个货币幻想，是一串数字而已。这串数字，比如1万块，今天值一头牛，是因为市场有1百头牛，而货币总量是100万元。明天通过信贷的乘数效应，货币总量变为1000万元，那这1万块只值一条牛腿了。问题关键在于大放水之下，如何保持资产不缩水？答案就是观察水的流向。1978年全国居民总存款220亿，2015年增加到60万亿，37年翻了3000倍。而同时，实际财富，按照GDP平均9%的增速算增加了125倍。平均下来每一年，实际财富增加9%，货币增加24%，通胀14%。所以如果这37年间作为农民种地，考虑到化肥种子等等大幅增长而农产品价格只翻了两三倍，简直是远远跑不过通胀。而跑得最慢的当然是拿着现金的人，按2%的复利，37年间竟然只翻了1倍。打工仔算是还好，年轻时候可以跑过货币速度，平均应该可以跑过GDP，跑赢通胀肯定没戏——货币速度肯定是各行业放水平均速度，打工仔绝对不会是领先的那一波。互联网早期从业者应该可以跑赢。房地产呢不好说，虽然平均不一定，但绝对是比较靠前的。考虑到农民工人的庞大基数，他们跑的慢的多，那应该有不少可以跑赢均值。</p>
+<p>结论：不被通胀之熊追上的根本要义是跑得比足够多人快。</p>
+<p><img src="/2022/07/13/180223/bear.jpg" alt="通胀之熊"></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/tags/">tags</a></li>
+        
+          <li><a href="/categories/">categories</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www.ffblog.space/2022/07/13/180223/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www.ffblog.space/2022/07/13/180223/&text=货币、铸币税与资产保值"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.ffblog.space/2022/07/13/180223/&is_video=false&description=货币、铸币税与资产保值"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=货币、铸币税与资产保值&body=Check out this article: https://www.ffblog.space/2022/07/13/180223/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www.ffblog.space/2022/07/13/180223/&title=货币、铸币税与资产保值"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www.ffblog.space/2022/07/13/180223/&name=货币、铸币税与资产保值&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www.ffblog.space/2022/07/13/180223/&t=货币、铸币税与资产保值"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2024
+    0xFF
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
